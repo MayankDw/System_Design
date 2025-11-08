@@ -5,6 +5,7 @@ Below figure shows the illustration of a single server setup where everything is
 <img width="940" height="592" alt="image" src="https://github.com/user-attachments/assets/cf93a904-bb96-4b29-8d34-4cc2831774cc" />
 
 Request Flow and Traffic
+
 <img width="940" height="584" alt="image" src="https://github.com/user-attachments/assets/64ea722e-8d39-4d5f-b8ba-5fee5c8282c3" />
 
 1. Users access websites through domain names, such as api.mysite.com. Usually, the
@@ -15,3 +16,11 @@ IP address 15.125.23.214 is returned.
 3. Once the IP address is obtained, Hypertext Transfer Protocol (HTTP) [1] requests are
 sent directly to your web server.
 4. The web server returns HTML pages or JSON response for rendering.
+
+### Database
+With the growth of the user base, one server is not enough, and we need multiple servers: one
+for web/mobile traffic, the other for the database (Figure 1-3). Separating web/mobile traffic
+(web tier) and database (data tier) servers allows them to be scaled independently.
+
+<img width="940" height="578" alt="image" src="https://github.com/user-attachments/assets/5bb3723f-baab-4a20-a2ee-f988290dc0a1" />
+
