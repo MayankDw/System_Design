@@ -49,4 +49,27 @@ Might be of choice if
 access the website if the web server is offline. In another scenario, if many users access the web server simultaneously and it reaches the web server’s load limit, users generally experience slower response or fail to connect to the server. A load balancer is the best
 technique to address these problems.
 
+### Load Balancer
+A load balancer evenly distributes the traffic based on servers in the load balancer set. 
+
+<img width="940" height="826" alt="image" src="https://github.com/user-attachments/assets/7800695f-7af8-46dc-94b6-3d42c915a138" />
+
+As shown in Figure 1-4, users connect to the public IP of the load balancer directly. With this setup, web servers are unreachable directly by clients anymore. For better security, private IPs are used for communication between servers. A private IP is an IP address reachable only between servers in the same network; however, it is unreachable over the internet. The load balancer communicates with web servers through private IPs.
+In Figure 1-4, after a load balancer and a second web server are added, we successfully solved no failover issue and improved the availability of the web tier. Details are explained below:
+ - If server 1 goes offline, all the traffic will be routed to server 2. This prevents the website from going offline. We will also add a new healthy web server to the server pool to balance the load.
+- If the website traffic grows rapidly, and two servers are not enough to handle the traffic, the load balancer can handle this problem gracefully. You only need to add more servers to the web server pool, and the load balancer automatically starts to send requests to them.
+Now the web tier looks good, what about the data tier? The current design has one database, so it does not support failover and redundancy.
+
+**Database replication** is a common technique to address those problems. Let us take a look.
+
+A master database generally only supports write operations. A slave database gets copies of the data from the master database and only supports read operations. All the data-modifying commands like insert, delete, or update must be sent to the master database. Most
+applications require a much higher ratio of reads to writes; thus, the number of slave databases in a system is usually larger than the number of master databases. Figure 1-5 shows a master database with multiple slave databases.
+
+<img width="760" height="833" alt="image" src="https://github.com/user-attachments/assets/2081d525-d046-43e9-9f2f-2f52cae609c0" />
+
+**Advantages of database replication:**
+ - Better performance: In the master-slave model, all writes and updates happen in master nodes; whereas, read operations are distributed across slave nodes. This model improves performance because it allows more queries to be processed in parallel.
+- Reliability: If one of your database servers is destroyed by a natural disaster, such as a typhoon or an earthquake, data is still preserved. You do not need to worry about data loss because data is replicated across multiple locations.
+- High availability: By replicating data across different locations, your website remains in operation even if a database is offline as you can access data stored in another database server.
+
 
