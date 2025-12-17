@@ -77,4 +77,7 @@ applications require a much higher ratio of reads to writes; thus, the number of
 In production systems, promoting a new master is more complicated as the data in a slave database might not be up to date. The missing data needs to be updated by running data recovery scripts. Although some other replication methods like multi-masters and circular
 replication could help, those setups are more complicated;
 
+<img width="940" height="1035" alt="image" src="https://github.com/user-attachments/assets/95b94031-ee64-4b9c-befa-62b336bfb0e3" />
+
+
 
