@@ -43,7 +43,7 @@ Might be of choice if
 - Serialize and Deserialize JSON, XML, YAML etc
 
 ### Horizontal Scaling and Vertical Scaling
-**Vertical Scaling ("scale up")** : Adding more CPU, memory - RAM etc. Limitation - you cannot keep on adding CPU, RAM as user base grows. Doesn't allow failover or redundancy. if one server fales, complete application goes down."\n"
+**Vertical Scaling ("scale up")** : Adding more CPU, memory - RAM etc. Limitation - you cannot keep on adding CPU, RAM as user base grows. Doesn't allow failover or redundancy. if one server fales, complete application goes down.\n
 **Horizontal Scaling "scale out")** : Adding more server. Preferred because . Adding more servers allows you failover. Users will unable to
 access the website if the web server is offline. In another scenario, if many users access the web server simultaneously and it reaches the web server’s load limit, users generally experience slower response or fail to connect to the server. A load balancer is the best
 technique to address these problems.
