@@ -79,5 +79,29 @@ replication could help, those setups are more complicated;
 
 <img width="940" height="1035" alt="image" src="https://github.com/user-attachments/assets/95b94031-ee64-4b9c-befa-62b336bfb0e3" />
 
+Let us take a look at the design:
+- A user gets the IP address of the load balancer from DNS.
+- A user connects the load balancer with this IP address.
+- The HTTP request is routed to either Server 1 or Server 2.
+- A web server reads user data from a slave database.
+- A web server routes any data-modifying operations to the master database. This includes write, update, and delete operations.
+
+### Cache
+A cache is a temporary storage area that stores the result of expensive responses or frequently accessed data in memory so that subsequent requests are served more quickly. As illustrated in Figure, every time a new web page loads, one or more database calls are executed to
+fetch data. The application performance is greatly affected by calling the database repeatedly. The cache can mitigate this problem.
+
+<img width="943" height="157" alt="image" src="https://github.com/user-attachments/assets/8eb6d952-acf7-45a6-a69c-531b8fb31698" />
+
+**Considerations for using cache**
+Here are a few considerations for using a cache system
+
+- Decide when to use cache. Consider using cache when data is read frequently but modified infrequently. Since cached data is stored in volatile memory, a cache server is not ideal for persisting data.
+- Consistency: This involves keeping the data store and the cache in sync. Inconsistency can happen because data-modifying operations on the data store and cache are not in a single transaction.
+- Mitigating failures: A single cache server represents a potential single point of failure (SPOF), defined in Wikipedia as follows: “A single point of failure (SPOF) is a part of a system that, if it fails, will stop the entire system from working” [8]. As a result, multiple cache servers across different data centers are recommended to avoid SPOF.
+- Eviction Policy: Once the cache is full, any requests to add items to the cache might cause existing items to be removed. This is called cache eviction. Least-recently-used (LRU) is the most popular cache eviction policy. Other eviction policies, such as the Least
+Frequently Used (LFU) or First in First Out (FIFO), can be adopted to satisfy different use cases.
+
+
+
 
 
