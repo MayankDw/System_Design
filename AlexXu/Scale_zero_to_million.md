@@ -24,3 +24,23 @@ for web/mobile traffic, the other for the database (Figure 1-3). Separating web/
 
 <img width="940" height="578" alt="image" src="https://github.com/user-attachments/assets/5bb3723f-baab-4a20-a2ee-f988290dc0a1" />
 
+### which database to use
+we can choose between *relational database* and *nonretational database*. Let's understand their difference:
+
+**Relational database** also knowns as RDMBS (Relational database management system). They have been their for over 40 years and historically generally a preferred option. They store value in row and columns format. They allow join operation between the tables. 
+These are structured data. Most popular ones are Oracle DB, MySQL, Postgre etc.
+
+**Non Relational database** of four different categories
+1. key value store
+2. Graph store
+3. Columns store
+4. Document store.
+Join operation is generally not supported.
+Might be of choice if
+- Required low latency
+- Need to store massive amount of data
+- Data is unstructured, and don't have relational database
+- Serialize and Deserialize JSON, XML, YAML etc
+
+
+
