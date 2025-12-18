@@ -103,10 +103,7 @@ Frequently Used (LFU) or First in First Out (FIFO), can be adopted to satisfy di
 
 ### Content Delivery Network (CDN): 
 A CDN is a network of geographically dispersed servers used to deliver static content. CDN servers cache static content like images, videos, CSS, JavaScript files, etc.
-
-
-
-
-
+It enables the caching of HTML pages that are based on request path, query strings, cookies, and request headers.
+CDN server closest to the user will deliver static content. Intuitively, the further users are from CDN servers, the slower the website loads.
 
 
