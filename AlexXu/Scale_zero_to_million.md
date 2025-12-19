@@ -106,4 +106,12 @@ A CDN is a network of geographically dispersed servers used to deliver static co
 It enables the caching of HTML pages that are based on request path, query strings, cookies, and request headers.
 CDN server closest to the user will deliver static content. Intuitively, the further users are from CDN servers, the slower the website loads.
 
+<img width="952" height="454" alt="image" src="https://github.com/user-attachments/assets/45fed2b8-7cf3-43ac-a37b-dec2097da05f" />
+
+<img width="940" height="335" alt="image" src="https://github.com/user-attachments/assets/f1db94a6-d4bf-4c1f-890e-60f771fbd7af" />
+
+
+
+
+
 
