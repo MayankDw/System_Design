@@ -110,6 +110,32 @@ CDN server closest to the user will deliver static content. Intuitively, the fur
 
 <img width="940" height="335" alt="image" src="https://github.com/user-attachments/assets/f1db94a6-d4bf-4c1f-890e-60f771fbd7af" />
 
+**Considerations of using a CDN**
+- Cost: CDNs are run by third-party providers, and you are charged for data transfers in and out of the CDN. Caching infrequently used assets provides no significant benefits so you should consider moving them out of the CDN.
+- Setting an appropriate cache expiry: For time-sensitive content, setting a cache expiry time is important. The cache expiry time should neither be too long nor too short. If it is too long, the content might no longer be fresh. If it is too short, it can cause repeat
+reloading of content from origin servers to the CDN.
+- CDN fallback: You should consider how your website/application copes with CDN failure. If there is a temporary CDN outage, clients should be able to detect the problem and request resources from the origin.
+
+<img width="940" height="1016" alt="image" src="https://github.com/user-attachments/assets/b1cc17e8-05eb-4b0e-a8e8-1953c0fadfaf" />
+
+1. Static assets (JS, CSS, images, etc.,) are no longer served by web servers. They are fetched from the CDN for better performance.
+2. The database load is lightened by caching data.
+
+**Stateful architecture**
+- A stateful server and stateless server has some key differences. A stateful server remembers
+- client data (state) from one request to the next. A stateless server keeps no state information.
+  
+<img width="940" height="589" alt="image" src="https://github.com/user-attachments/assets/e51a4867-1f5f-4944-b303-a81e78a2a82b" />
+
+**Stateless architecture**
+
+In this stateless architecture, HTTP requests from users can be sent to any web servers, which fetch state data from a shared data store. State data is stored in a shared data store and kept out of web servers. A stateless system is simpler, more robust, and scalable.
+
+<img width="940" height="891" alt="image" src="https://github.com/user-attachments/assets/a6148e93-1be9-4bda-8793-087d9f33c8f3" />
+
+<img width="940" height="909" alt="image" src="https://github.com/user-attachments/assets/787a50c5-b530-42bb-be06-202bb5cf8de0" />
+
+
 
 
 
