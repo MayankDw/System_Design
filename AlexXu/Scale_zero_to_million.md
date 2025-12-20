@@ -177,7 +177,17 @@ Sharding separates large databases into smaller, more easily managed parts calle
 
 Sharding is a great technique to scale the database but it is far from a perfect solution. It introduces complexities and new challenges to the system:
 
+*Resharding data*: Resharding data is needed when 1) a single shard could no longer hold more data due to rapid growth. 2) Certain shards might experience shard exhaustion faster than others due to uneven data distribution. When shard exhaustion happens, it requires
+updating the sharding function and moving data around.
 
+*Celebrity problem*: This is also called a hotspot key problem. Excessive access to a specific shard could cause server overload. Imagine data for Katy Perry, Justin Bieber, and Lady Gaga all end up on the same shard. For social applications, that shard will be overwhelmed
+with read operations. To solve this problem, we may need to allocate a shard for each celebrity.
+
+*Join and de-normalization*: Once a database has been sharded across multiple servers, it is
+hard to perform join operations across database shards. A common workaround is to denormalize
+the database so that queries can be performed in a single table.
+
+<img width="940" height="1187" alt="image" src="https://github.com/user-attachments/assets/4bf32756-0267-47fd-b7bf-da0a8a3d8ad4" />
 
 
 
