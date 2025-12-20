@@ -172,6 +172,13 @@ When working with a small website that runs on a few servers, logging, metrics, 
 
 <img width="940" height="685" alt="image" src="https://github.com/user-attachments/assets/4bec2e86-14e7-4b58-be66-57379b6e9fef" />
 
+Sharding separates large databases into smaller, more easily managed parts called shards. Each shard shares the same schema, though the actual data on each shard is unique to the shard.
+<img width="555" height="416" alt="image" src="https://github.com/user-attachments/assets/177d06cd-81b6-4f8e-9eef-29d582c30bdf" />
+
+Sharding is a great technique to scale the database but it is far from a perfect solution. It introduces complexities and new challenges to the system:
+
+
+
 
 
 
