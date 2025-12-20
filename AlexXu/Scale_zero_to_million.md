@@ -135,6 +135,53 @@ In this stateless architecture, HTTP requests from users can be sent to any web 
 
 <img width="940" height="909" alt="image" src="https://github.com/user-attachments/assets/787a50c5-b530-42bb-be06-202bb5cf8de0" />
 
+### Data Centers
+In normal operation, users are geoDNS-routed, also known as geo-routed, to the closest data center, with a split traffic of x% in US-East and (100 – x)% in US-West. geoDNS is a DNS service that allows domain names to be resolved to IP addresses based on the location of a user.
+
+<img width="940" height="945" alt="image" src="https://github.com/user-attachments/assets/232d392b-f1c8-48f6-967c-222bbe2876f9" />
+
+In the event of any significant data center outage, we direct all traffic to a healthy data center. In Figure , data center 2 (US-West) is offline, and 100% of the traffic is routed to data center 1 (US-East).
+
+<img width="940" height="955" alt="image" src="https://github.com/user-attachments/assets/8554809f-70c9-42be-9ee4-f544b6472aa9" />
+
+Several technical challenges must be resolved to achieve multi-data center setup:
+1) Traffic redirection
+2) Data synchronization
+3) Test and deployment
+
+To further scale our system, we need to decouple different components of the system so they can be scaled independently. Messaging queue is a key strategy employed by many realworld distributed systems to solve this problem
+
+**Message Queue**
+Input services, called producers/publishers, create messages, and publish them to a message queue. Other services or servers, called
+consumers/subscribers, connect to the queue, and perform actions defined by the messages.
+
+<img width="941" height="198" alt="image" src="https://github.com/user-attachments/assets/29ce4593-43df-4e72-9b08-4046c0db15a8" />
+
+Decoupling makes the message queue a preferred architecture for building a scalable and reliable application
+With the message queue, the producer can post a message to the queue when the consumer is unavailable to process it. The consumer can read messages from the queue even when the producer is unavailable.
+
+The producer and the consumer can be scaled independently. When the size of the queue becomes large, more workers are added to reduce the processing time.
+<img width="940" height="233" alt="image" src="https://github.com/user-attachments/assets/e0214541-ee81-41f9-a399-e9272328186b" />
+
+### Logging, metrics, automation
+When working with a small website that runs on a few servers, logging, metrics, and automation support are good practices but not a necessity. However, now that your site has grown to serve a large business, investing in those tools is essential.
+
+<img width="852" height="1110" alt="image" src="https://github.com/user-attachments/assets/0c29fdca-7a4a-40ad-a41c-3f0fc66b5f36" />
+
+**Vertical Scaling vs Horizontal Scaling**
+
+<img width="940" height="685" alt="image" src="https://github.com/user-attachments/assets/4bec2e86-14e7-4b58-be66-57379b6e9fef" />
+
+
+
+
+
+
+
+
+
+
+
 
 
 
