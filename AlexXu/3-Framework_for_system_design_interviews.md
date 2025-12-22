@@ -12,7 +12,7 @@ What kind of questions to ask? Ask questions to understand the exact requirement
 Example : Design a News Feed app
 what types of question you might ask, How conversation should proceed. 
 
-C : is this a mobile app or web app or both? <br\>
+C : is this a mobile app or web app or both? <br/>
 I : Both
 C : What is the most important feature of the app?
 I : Ability to make post and see friends news feed. 
