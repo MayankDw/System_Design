@@ -13,17 +13,17 @@ Example : Design a News Feed app
 what types of question you might ask, How conversation should proceed. 
 
 C : is this a mobile app or web app or both? <br/>
-I : Both
-C : What is the most important feature of the app?
-I : Ability to make post and see friends news feed. 
-C : How the feeds in the app should appear in which order, random, reverse chronological order? A closer friend feed should get more weightage than the group. 
-I : To keep things simple, lets take reverse chronological order
-C : How many friends a user can have ?
-I : 5000
-C : What is the traffic volume?
-I : 10 millions users per day. 
-C : Can feeds contains video, impages or just text? 
-I : It can contain media files, including videos and images. 
+I : Both <br/>
+C : What is the most important feature of the app?<br/>
+I : Ability to make post and see friends news feed. <br/>
+C : How the feeds in the app should appear in which order, random, reverse chronological order? A closer friend feed should get more weightage than the group. <br/>
+I : To keep things simple, lets take reverse chronological order <br/>
+C : How many friends a user can have ?<br/>
+I : 5000<br/>
+C : What is the traffic volume?<br/>
+I : 10 millions users per day. <br/>
+C : Can feeds contains video, impages or just text? <br/>
+I : It can contain media files, including videos and images. <br/>
 
 Why to these questions? To clarify the requirement, and understand ambiguities, Do Not assume. 
 
