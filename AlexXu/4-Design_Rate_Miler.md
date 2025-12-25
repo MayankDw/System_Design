@@ -40,3 +40,6 @@ processes.
 - Exception handling. Show clear exceptions to users when their requests are throttled.
 - High fault tolerance. If there are any problems with the rate limiter (for example, a cache
 server goes offline), it does not affect the entire system.
+
+**Step 2** - Propose high-level design and get buy-in
+Let us keep things simple and use a basic client and server model for communication
