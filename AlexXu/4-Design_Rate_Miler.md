@@ -62,4 +62,13 @@ It depends on your company’s current technology stack, engineering resources, 
 - If you have already used microservice architecture and included an API gateway in the design to perform authentication, IP whitelisting, etc., you may add a rate limiter to the API gateway.
 - Building your own rate limiting service takes time. If you do not have enough engineering resources to implement a rate limiter, a commercial API gateway is a better option.
 
-
+**Algorithms for rate limiting**
+Rate limiting can be implemented using different algorithms, and each of them has distinct
+pros and cons. Even though this chapter does not focus on algorithms, understanding them at
+high-level helps to choose the right algorithm or combination of algorithms to fit our use
+cases. Here is a list of popular algorithms:
+- Token bucket
+- Leaking bucket
+- Fixed window counter
+- Sliding window log
+- Sliding window counter
