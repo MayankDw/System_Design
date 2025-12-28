@@ -72,3 +72,21 @@ cases. Here is a list of popular algorithms:
 - Fixed window counter
 - Sliding window log
 - Sliding window counter
+
+### High Level Architecture 
+The basic idea of rate limiting algorithms is simple. At the high-level, we need a counter to keep track of how many requests are sent from the same user, IP address, etc. If the counter is larger than the limit, the request is disallowed
+
+Where shall we store counters? Using the database is not a good idea due to slowness of disk access. In-memory cache is chosen because it is fast and supports time-based expiration strategy. For instance, Redis is a popular option to implement rate limiting. It is an inmemory
+store that offers two commands: INCR and EXPIRE.
+- **INCR:** It increases the stored counter by 1.
+- **EXPIRE:** It sets a timeout for the counter. If the timeout expires, the counter is automatically deleted.
+
+The client sends a request to rate limiting middleware.
+- Rate limiting middleware fetches the counter from the corresponding bucket in Redis and checks if the limit is reached or not.
+- If the limit is reached, the request is rejected.
+- If the limit is not reached, the request is sent to API servers. Meanwhile, the system increments the counter and saves it back to Redis.
+
+**Step 3 - Design deep dive**
+The high-level design in Figure 4-12 does not answer the following questions:
+- How are rate limiting rules created? Where are the rules stored?
+- How to handle requests that are rate limited?
