@@ -121,3 +121,10 @@ The rate limiter returns the following HTTP headers to clients:
 
 When a user has sent too many requests, a 429 too many requests error and X-RatelimitRetry-After header are returned to the client.
 
+### Detail Design
+Figure presents a detailed design of the system.
+
+<img width="940" height="770" alt="image" src="https://github.com/user-attachments/assets/c94b0b33-1589-4c2b-8811-68a575523750" />
+
+
+
