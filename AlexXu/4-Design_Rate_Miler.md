@@ -96,7 +96,7 @@ Lyft open-sourced their rate-limiting component. We will peek inside of the comp
 
 domain: messaging
 descriptors:
-- key: message_type
+  key: message_type
     Value: marketing
   rate_limit:
     unit: day
@@ -106,7 +106,7 @@ In the above example, the system is configured to allow a maximum of 5 marketing
 per day. Here is another example:
 domain: auth
 descriptors:
-- key: auth_type
+  key: auth_type
     Value: login
   rate_limit:
     unit: minute
