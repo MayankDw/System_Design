@@ -97,19 +97,20 @@ Lyft open-sourced their rate-limiting component. We will peek inside of the comp
 domain: messaging
 descriptors:
 - key: message_type
-Value: marketing
-rate_limit:
-unit: day
-requests_per_unit: 5
+    Value: marketing
+  rate_limit:
+    unit: day
+    requests_per_unit: 5
 
 In the above example, the system is configured to allow a maximum of 5 marketing messages
 per day. Here is another example:
 domain: auth
 descriptors:
 - key: auth_type
-Value: login
-rate_limit:
-unit: minute
-requests_per_unit: 5
+    Value: login
+  rate_limit:
+    unit: minute
+    requests_per_unit: 5
 
 This rule shows that clients are not allowed to login more than 5 times in 1 minute. Rules are generally written in configuration files and saved on disk.
+
