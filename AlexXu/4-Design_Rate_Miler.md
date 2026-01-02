@@ -114,3 +114,10 @@ descriptors:
 
 This rule shows that clients are not allowed to login more than 5 times in 1 minute. Rules are generally written in configuration files and saved on disk.
 
+The rate limiter returns the following HTTP headers to clients:
+- X-Ratelimit-Remaining: The remaining number of allowed requests within the window.
+- X-Ratelimit-Limit: It indicates how many calls the client can make per time window.
+- X-Ratelimit-Retry-After: The number of seconds to wait until you can make a request again without being throttled.
+
+When a user has sent too many requests, a 429 too many requests error and X-RatelimitRetry-After header are returned to the client.
+
