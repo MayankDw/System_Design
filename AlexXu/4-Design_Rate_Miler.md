@@ -126,5 +126,9 @@ Figure presents a detailed design of the system.
 
 <img width="940" height="770" alt="image" src="https://github.com/user-attachments/assets/c94b0b33-1589-4c2b-8811-68a575523750" />
 
-
+- Rules are stored on the disk. Workers frequently pull rules from the disk and store them in the cache.
+- When a client sends a request to the server, the request is sent to the rate limiter middleware first.
+- Rate limiter middleware loads rules from the cache. It fetches counters and last request timestamp from Redis cache.
+    - if the request is not rate limited, it is forwarded to API servers.
+    - if the request is rate limited, the rate limiter returns 429 too many requests error to the client
 
