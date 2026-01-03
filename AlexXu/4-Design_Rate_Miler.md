@@ -139,3 +139,13 @@ Challenges:
 - Race condition
 - Synchronization issue
 
+**Race Condition**
+Assume the counter value in Redis is 3. If two requests concurrently read the counter value before either of them writes the value back, each will increment the counter by one and write it back without checking the other thread. Both requests (threads) believe they have the
+correct counter value 4. However, the correct counter value should be 5.
+**Synchornization**
+For example, on the left side of Figure 4-15, client 1 sends requests to rate limiter 1, and client 2 sends requests to rate limiter 2. As the web tier is stateless, clients can send requests to a different rate limiter as shown on the right side of Figure 4-15. If no synchronization happens, rate limiter 1 does   not contain any data about client 2. Thus, the rate limiter cannot work properly..
+<img width="940" height="333" alt="image" src="https://github.com/user-attachments/assets/de8c293e-e5c0-40d6-826b-41f4bdc9dd40" />
+
+
+
+
