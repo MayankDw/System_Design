@@ -132,3 +132,10 @@ Figure presents a detailed design of the system.
     - if the request is not rate limited, it is forwarded to API servers.
     - if the request is rate limited, the rate limiter returns 429 too many requests error to the client
 
+
+**Rate limiter in a distributed environment**
+Building a rate limiter that works in a single server environment is not difficult. However, scaling the system to support multiple servers and concurrent threads is a different story.
+Challenges:
+- Race condition
+- Synchronization issue
+
